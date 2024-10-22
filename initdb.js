@@ -10,7 +10,7 @@ const dummyMeals = [
 			'A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.',
 		instructions: `
       1. Prepare the patty:
-         Mix 200g of ground beef with salt and pepper. Form into a patty.
+         Mix 200g onpf ground beef with salt and pepper. Form into a patty.
 
       2. Cook the patty:
          Heat a pan with a bit of oil. Cook the patty for 2-3 minutes each side, until browned.
