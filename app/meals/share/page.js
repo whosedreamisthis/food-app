@@ -16,6 +16,18 @@ export default function ShareMealPage() {
 				<p>Or any other meal you feel needs sharing!</p>
 			</header>
 			<main className={classes.main}>
+				{
+					<form action={shareMeal}>
+						<button type="submit">PRESS HERE</button>
+					</form>
+				}
+			</main>
+		</>
+	);
+}
+
+{
+	/*{' '}
 				<form className={classes.form} action={shareMeal}>
 					<div className={classes.row}>
 						<p>
@@ -55,12 +67,10 @@ export default function ShareMealPage() {
 						></textarea>
 					</p>
 					<ImagePicker label="Your image" name="image" />
-					{/* {state.message && <p>{state.message}</p>} */}
+					{/* {state.message && <p>{state.message}</p>} }
 					<p className={classes.actions}>
 						<MealsFormSubmit />
 					</p>
-				</form>
-			</main>
-		</>
-	);
+				</form>{' '}
+				*/
 }
