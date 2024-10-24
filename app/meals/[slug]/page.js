@@ -3,9 +3,8 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import { getMeal } from '@/lib/meals';
 import { notFound } from 'next/navigation';
-export default function MealDetailsPage({ params }) {
-	const meal = getMeal(params.slug);
-
+export default async function MealDetailsPage({ params }) {
+	const meal = await getMeal(params.slug);
 	if (!meal) {
 		notFound();
 	}
