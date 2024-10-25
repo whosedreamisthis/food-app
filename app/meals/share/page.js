@@ -4,8 +4,17 @@ import ImagePicker from '@/components/meals/image-picker';
 import { shareMeal } from '@/lib/actions';
 import MealsFormSubmit from '@/components/meals/meals-form-submit';
 import { useFormState } from 'react-dom';
+import { useState } from 'react';
+/*
+	<p>
+							<input value={image} id="base64" name="base64" />
+						</p> */
 export default function ShareMealPage() {
 	const [state, formAction] = useFormState(shareMeal, { message: null });
+	const [image, setImage] = useState('');
+	function getResult(result) {
+		setImage(result);
+	}
 	return (
 		<>
 			<header className={classes.header}>
@@ -18,6 +27,16 @@ export default function ShareMealPage() {
 			<main className={classes.main}>
 				<form className={classes.form} action={formAction}>
 					<div className={classes.row}>
+						<p>
+							<label htmlFor="name">Your name</label>
+
+							<input
+								type="text"
+								value={image}
+								id="base64"
+								name="base64"
+							/>
+						</p>
 						<p>
 							<label htmlFor="name">Your name</label>
 							<input type="text" id="name" name="name" required />
@@ -54,7 +73,11 @@ export default function ShareMealPage() {
 							required
 						></textarea>
 					</p>
-					<ImagePicker label="Your image" name="image" />
+					<ImagePicker
+						label="Your image"
+						name="image"
+						getResult={getResult}
+					/>
 					{state.message && <p>{state.message}</p>}
 					<p className={classes.actions}>
 						<MealsFormSubmit />
