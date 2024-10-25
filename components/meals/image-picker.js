@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import styles from './image-picker.module.css';
 import Image from 'next/image';
+import { revalidatePath } from 'next/cache';
 export default function ImagePicker({ label, name }) {
 	const [pickedImage, setPickedImage] = useState('');
 	const imageInputRef = useRef();
@@ -20,6 +21,9 @@ export default function ImagePicker({ label, name }) {
 		const fileReader = new FileReader();
 		fileReader.onload = () => {
 			setPickedImage(fileReader.result);
+			// setTimeout(() => {
+			// 	revalidatePath('/meals');
+			// }, 2000);
 		};
 		fileReader.readAsDataURL(file);
 	}

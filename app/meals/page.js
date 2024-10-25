@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic';
 async function Meals() {
 	const meals = await getMeals();
 	return <MealsGrid meals={meals} />;
+	// <p>hello</p>;
 }
 export default function MealsPage() {
 	unstable_noStore();
